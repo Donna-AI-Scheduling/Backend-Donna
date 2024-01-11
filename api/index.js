@@ -22,6 +22,10 @@ const auth2Client =  new google.auth.OAuth2(
     process.env.REDIRECT_URL
 );
 
+app.get('/', (req, res) => {
+    res.send('GET request to the homepage')
+  })
+
 app.get("/google", (req, res)=>{
 
     const authUrl = auth2Client.generateAuthUrl({
